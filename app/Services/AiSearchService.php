@@ -51,9 +51,11 @@ class AiSearchService
 
             return $this->fallback($query);
 
-        } catch (\Exception) {
-
+        } catch (\Exception $e) {
+            logger()->info($e->getMessage());
         }
+
+        return $this->fallback($query);
     }
 
     private function fallback(string $query): array
