@@ -6,7 +6,7 @@
         <input
             type="text"
             name="q"
-            value="{{ $query }}"
+            {{-- value="{{ $query }}" --}}
             placeholder="Describe what you're looking for..."
             class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             required
@@ -43,7 +43,7 @@
         </svg>
         <h3 class="mt-4 text-lg font-medium text-gray-900">No products found</h3>
         <p class="mt-2 text-gray-500">Try different keywords or browse all products</p>
-        <a href="{{ route('products.index') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        <a href="{{ route('home') }}" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
             View All Products
         </a>
     </div>

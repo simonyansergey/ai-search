@@ -14,7 +14,7 @@
 
         <div>
             <div class="mb-2">
-                <a href="{{ route('products.index') }}" class="text-blue-600 hover:underline">
+                <a href="{{ route('home') }}" class="text-blue-600 hover:underline">
                     ← Back to products
                 </a>
             </div>

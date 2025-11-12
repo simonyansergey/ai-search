@@ -1,16 +1,21 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Illuminate\View\View;
+use Illuminate\Http\Request;
 use App\Services\AiSearchService;
 use App\Services\ProductSearchService;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class SearchController extends Controller
 {
     public function index()
     {
-        return view('search.index');
+        $products = Product::with(['category'])
+            ->orderByDesc('created_at')
+            ->paginate(10);
+
+        return view('search.index', compact('products'));
     }
 
     /**

@@ -6,7 +6,11 @@ use Illuminate\Support\Facades\Http;
 
 class AiSearchService
 {
-    public function parseSearchQuery($query): array
+    /**
+     * @param string $query
+     * @return array
+     */
+    public function parseSearchQuery(string $query): array
     {
         try {
             $systemPrompt = <<<PROMPT
@@ -58,6 +62,10 @@ class AiSearchService
         return $this->fallback($query);
     }
 
+    /**
+     * @param string $query
+     * @return array
+     */
     private function fallback(string $query): array
     {
         return [

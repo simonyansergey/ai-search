@@ -16,8 +16,8 @@
                     </a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="{{ route('products.index') }}" class="text-gray-600 hover:text-gray-900">
-                        All Products
+                    <a href="{{ route('products.create') }}" class="px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 shadow-sm transition">
+                        Add new product
                     </a>
                 </div>
             </div>
@@ -27,11 +27,5 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         @yield('content')
     </main>
-
-    <footer class="bg-white border-t mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-600">
-            <p>AI-Powered Product Search Demo</p>
-        </div>
-    </footer>
 </body>
 </html>

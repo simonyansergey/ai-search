@@ -10,8 +10,4 @@ Route::controller(SearchController::class)
         Route::get('/search', 'search')->name('search');
     });
 
-Route::controller(ProductController::class)
-    ->group(static function (): void {
-        Route::get('/products', 'index')->name('products.index');
-        Route::get('/products/{product:slug}', 'show')->name('products.show');
-    });
+Route::resource('products', ProductController::class);
