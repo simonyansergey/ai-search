@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -37,10 +36,12 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function imageUrl(): Attribute
+    public function getImageUrlAttribute()
     {
-        return Attribute::make(
-            get: $this->image ? asset('storage' . $this->image) : asset('images/placeholder.jpg')
-        );
+        if ($this->image) {
+            return asset('storage/' . $this->image);
+        }
+
+        return asset('images/placeholder.jpg');
     }
 }
